@@ -1,0 +1,107 @@
+
+
+.dropdown .dropdown-menu,
+.bootstrap-select .dropdown-menu {
+ border-radius:0;
+ border:0;
+
+ -webkit-box-shadow:2px 2px 2px rgba(0,0,0,0.1),-1px -1px 2px rgba(0,0,0,0.1);
+ box-shadow:2px 2px 2px rgba(0,0,0,0.1),-1px -1px 2px rgba(0,0,0,0.1);
+ -webkit-transition:-webkit-transform 0.3s;
+ transition:-webkit-transform 0.3s;
+ transition:transform 0.3s;
+ transition:transform 0.3s, -webkit-transform 0.3s;
+ margin-top:10px;
+ -webkit-transform:translateY(30px);
+ transform:translateY(0px);
+ color:#333;
+ font-size:0.9rem;
+ min-width:200px;
+ outline:none !important
+}
+
+
+
+.dropdown .dropdown-menu a:hover,
+.bootstrap-select .dropdown-menu a:hover {
+ background:#38c172;
+ color:#fff;
+}
+
+.dropdown .dropdown-menu a,
+.bootstrap-select .dropdown-menu a {
+ padding:10px 20px
+}
+
+ .dropdown .dropdown-menu::before {
+ content:'';
+ display:block;
+ width:0;
+ height:0;
+ border-left:7px solid transparent;
+ border-right:7px solid transparent;
+ border-bottom:8px solid #eee;
+ position:absolute;
+ top:-8px;
+ left:30px;
+ 
+}
+
+.dropdown-toggle::after {
+ border:none !important;
+ content:'\f107';
+ vertical-align:baseline;
+ font-family:'FontAwesome'
+}
+
+
+
+i[class*="icon-"] {
+ -webkit-transform:translateY(3px);
+ transform:translateY(3px)
+}
+
+
+  #style-switch-button {
+ z-index:9999 !important
+}
+
+
+ nav.navbar {
+ padding-top:10px;
+ padding-bottom:10px;
+ -webkit-box-shadow:2px 2px 2px rgba(0,0,0,0.1);
+ box-shadow:2px 2px 2px rgba(0,0,0,0.1);
+ background:#fff;
+
+}
+
+
+nav.navbar .navbar-btn {
+ font-weight:300
+}
+nav.navbar .navbar-toggler {
+ font-size:1.05em;
+ background:none !important;
+ border:none !important;
+ font-family:"Poppins",sans-serif;
+ text-transform:uppercase;
+ color:#333;
+ padding:10px 5px;
+ cursor:pointer
+}
+nav.navbar .navbar-toggler i {
+ margin-left:10px
+}
+@media (max-width: 576px) {
+ nav.navbar .container {
+  width:100%
+ }
+}
+@media (max-width: 992px) {
+ nav.navbar a.nav-link {
+  padding-left:0 !important;
+  padding-right:0 !important
+ }
+
+}
