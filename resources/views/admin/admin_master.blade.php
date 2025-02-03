@@ -8,7 +8,7 @@
       
         <link rel="icon" href="{{asset('panel/assets/images/favicon.png')}}" >
         <!--Page title-->
-        <title>NullScripts Pro</title>
+        <title>Admin | Dashboard</title>
         <!--bootstrap-->
         <link rel="stylesheet" href="{{asset('panel/assets/css/bootstrap.min.css')}}">
         <!--font awesome-->

@@ -1,8 +1,8 @@
 
                 <div class="sidebar_logo">
-                    <a href="index.html">
-  <img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid logo1">
-   <img src="{{asset('panel/assets/images/logo_small.png')}}" alt="" class="img-fluid logo2">
+                    <a href="{{ route('admin.dashboard')}}">
+<img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid logo1">
+<img src="{{asset('panel/assets/images/logo_small.png')}}" alt="" class="img-fluid logo2">
                     </a>
                 </div>
                 <div class="sidebar_btn">

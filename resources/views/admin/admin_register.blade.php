@@ -7,7 +7,7 @@
         <meta name="author" content="">
         <link rel="icon" href="{{ asset('panel/assets/images/favicon.png') }}" >
         <!--Page title-->
-        <title>Admin easy Learning</title>
+        <title>ShikhonHub</title>
         <!--bootstrap-->
         <link rel="stylesheet" href="{{ asset('panel/assets/css/bootstrap.min.css') }}">
         <!--font awesome-->
@@ -20,6 +20,9 @@
         <!-- <link rel="stylesheet" href="assets/plugins/chartjs-bar-chart/chart.css"> -->
         <!--Custom CSS-->
         <link rel="stylesheet" href="{{ asset('panel/assets/css/style.css') }}">
+
+   
+
     </head>
     <body id="page-top">
         <!-- preloader -->

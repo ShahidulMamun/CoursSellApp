@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,21 +15,7 @@ use App\Http\Controllers\AdminController;
 
 /*===================Admin Route===========================*/
 
-Route::prefix('admin')->group(function (){
-    Route::get('/login',[AdminController::class, 'Index'])->name('login_from');
-    Route::post('/login/owner',[AdminController::class, 'Login'])->name('admin.login');
-    Route::get('/dashboard',[AdminController::class, 'Dashboard'])->name('admin.dashboard')->middleware('admin');
-    Route::get('/logout',[AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
-    Route::get('/register',[AdminController::class, 'AdminRegister'])->name('admin.register');
-    Route::post('/register/create',[AdminController::class, 'AdminRegisterCreate'])->name('admin.register.create');
-    Route::get('/category/add',[AdminController::class, 'addcategory'])->name('admin.category.add');
-    Route::post('/category/add',[AdminController::class, 'categoryadd'])->name('admin.category.add');
-     Route::get('/category/sub/category',[AdminController::class, 'subcategory'])->name('admin.category.sub.category');
-      Route::post('/category/sub/category',[AdminController::class, 'subaddcategory'])->name('admin.category.sub.add');
-     Route::get('/add/scripts_all',[AdminController::class, 'addscripts'])->name('admin.add.scripts_all');
-      Route::post('/add/scripts/software',[AdminController::class, 'addsoftware'])->name('admin.add.software');
-
-});
+require_once __DIR__. '/admin.php';
 
 Route::get('/', function () {
     return view('welcome');

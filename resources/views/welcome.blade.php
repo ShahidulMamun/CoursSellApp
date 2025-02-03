@@ -42,7 +42,7 @@
     <div class="col-xl-3"></div>
     <div class="col-xl-5 text-center">
       <h1 class="display-text font-weight-bold mb-0 text-dark mt-3">Hi I am</h1>
-      <h2 class="display-name font-weight-bold text-dark">Fahimul Islam Khan</h2>
+      <h2 class="display-name font-weight-bold text-dark">Mohsin Hasan</h2>
       <p class="ptop-head font-weight-lighter text-muted mt-3">
         I help your online business and career thrive with over 8+ years of industry experience in growth and digital marketing.
       </p>

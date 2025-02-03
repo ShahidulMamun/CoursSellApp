@@ -7,12 +7,27 @@
                             <span class="menu-text">home</span>
                         </a>
                       </li>
-                    <li class="single-nav-wrapper">
+
+                      <li class="single-nav-wrapper">
+                          <a class="menu-item" href="{{route('admin.courses')}}" aria-expanded="false">
+                            <span class="left-icon"><i class="far fa-edit"></i></span>
+                              <span class="menu-text">Course</span>
+                          </a>
+                      </li>
+                      <li class="single-nav-wrapper">
                           <a class="menu-item" href="{{ asset('admin/category/add')}}" aria-expanded="false">
                             <span class="left-icon"><i class="far fa-edit"></i></span>
                               <span class="menu-text">Category</span>
                           </a>
                       </li>
+
+                       <li class="single-nav-wrapper">
+                          <a class="menu-item" href="{{ route('admin.register')}}" aria-expanded="false">
+                            <span class="left-icon"><i class="far fa-edit"></i></span>
+                              <span class="menu-text">Create Admin</span>
+                          </a>
+                      </li>
+
 
                        <li class="single-nav-wrapper">
                           <a class="menu-item" href="{{ asset('admin/category/sub/category')}}" aria-expanded="false">

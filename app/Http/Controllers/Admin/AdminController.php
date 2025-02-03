@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
-use\App\Models\Admin;
-use\App\Models\category;   
-use\App\Models\subcategory; 
-use\App\Models\software; 
+use App\Models\Admin;
+use App\Models\category;   
+use App\Models\subcategory; 
+use App\Models\software; 
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 
@@ -14,6 +16,8 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
+    
+    
     public function Index(){
 
         return view('admin.admin_login');

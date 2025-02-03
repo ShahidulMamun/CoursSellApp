@@ -8,7 +8,7 @@
        
         <link rel="icon" href="{{asset('panel/assets/images/favicon.png')}}" >
         <!--Page title-->
-        <title>Admin easy Learning</title>
+        <title>Admin Login</title>
         <!--bootstrap-->
         <link rel="stylesheet" href="{{asset('panel/assets/css/bootstrap.min.css')}}">
         <!--font awesome-->
@@ -69,8 +69,6 @@
                                     </label>
                                 </div>
                                 <div class="form-group">
-                                    <a class="registration" href=" {{ route('admin.register')}} ">Create new account</a><br>
-                                    <a href=" " class="text-white">I forgot my password</a>
                                     <button type="submit" class="btn btn-blue">Login</button>
                                 </div>
                             </form>
