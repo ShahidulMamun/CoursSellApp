@@ -21,6 +21,9 @@ Route::prefix('admin')->group(function (){
     //courses
     Route::get('/courses',[CourseController::class,'courses'])->name('admin.courses');
     Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.store');
+
+    Route::get('/courseedit/{id}', [CourseController::class, 'edit']);
+    Route::post('/courses/update/{id}', [CourseController::class, 'update'])->name('courses.update');
     Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
 
