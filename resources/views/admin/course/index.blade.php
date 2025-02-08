@@ -27,7 +27,7 @@
 				<div class="card-body">
 					<div class="row">
 					<div class="col-12 col-sm-6 col-xsm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-2">
-					<p class="text-muted">Add Category</p>
+					<p class="text-muted">Courses</p>
 						</div>
 						<div class="col-12 col-sm-6 col-xsm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end mt-2">
 						<a class="text-dark" href="{{ asset('admin/dashboard')}}">Dashboard |</a>

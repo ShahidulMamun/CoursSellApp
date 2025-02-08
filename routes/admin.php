@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\VideosController;
 
 /*===================Admin Route===========================*/
 
@@ -25,6 +26,16 @@ Route::prefix('admin')->group(function (){
     Route::get('/courseedit/{id}', [CourseController::class, 'edit']);
     Route::post('/courses/update/{id}', [CourseController::class, 'update'])->name('courses.update');
     Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
+    //videos
+    Route::get('/videos',[VideosController::class,'videos'])->name('admin.videos');
+    Route::post('/videos/store', [VideosController::class, 'store'])->name('videos.store');
+    Route::get('/video/{id}/{edit}', [VideosController::class, 'edit']);
+
+    Route::post('/videoupdate/{id}', [VideosController::class, 'videoUpdate'])->name('video.update');
+
+
+
+    Route::delete('/video/{id}', [VideosController::class, 'destroy'])->name('video.destroy');
 
 
 

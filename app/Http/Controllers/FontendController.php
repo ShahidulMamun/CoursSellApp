@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use\App\Models\software; 
+use App\Models\software; 
 use Illuminate\Http\Request;
 
 class FontendController extends Controller

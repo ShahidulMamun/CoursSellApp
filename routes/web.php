@@ -43,3 +43,6 @@ Auth::routes();
 // Route::post('/add_blog/create', [App\Http\Controllers\HomeController::class, 'blogcreate'])->name('add_blog.create');
 // Route::get('/blog_list', [App\Http\Controllers\HomeController::class, 'bloglist'])->name('blog_list');
 
+
+
+

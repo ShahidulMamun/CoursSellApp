@@ -17,7 +17,7 @@ class CreateVideosTable extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained()->onDelete('cascade');
             $table->string('title');
-            $table->string('youtube_url');
+            $table->string('video_id');
             $table->integer('order')->default(0);
             $table->timestamps();
         });

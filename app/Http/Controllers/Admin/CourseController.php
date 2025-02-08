@@ -11,6 +11,11 @@ use App\Models\Course;
 class CourseController extends Controller
 {
    
+public function __construct()
+{
+    $this->middleware('admin');
+}
+
 
 public function courses(){
    	 
@@ -73,6 +78,7 @@ public function update(Request $request, $id)
     $course->description = $request->description;
     $course->price = $request->price;
     $course->status = $request->status;
+    $course->slug =  Str::slug($request->title);
 
     if ($request->hasFile('thumbnail')) {
 
