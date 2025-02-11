@@ -27,39 +27,39 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="counter">
                         <div class="counter_item">
-                             <span><i class="fa fa-code"></i></span>
-                              <h2 class="timer count-number" data-to="300" data-speed="1500"></h2>
+                             <span><i class="fa fa-graduation-cap"></i></span>
+                              <h2 class="timer count-number" data-to="{{App\Models\Course::count()}}" data-speed="1500"></h2>
                         </div>
                      
-                       <p class="count-text ">SomeText GoesHere</p>
+                       <p class="count-text ">Live Courses</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="counter">
                         <div class="counter_item">
-                            <span><i class="fa fa-coffee"></i></span>
-                             <h2 class="timer count-number" data-to="1700" data-speed="1500"></h2>
+                            <span><i class="fa fa-video"></i></span>
+                             <h2 class="timer count-number" data-to="{{App\Models\Video::count()}}" data-speed="1500"></h2>
                         </div>
-                        <p class="count-text ">SomeText GoesHere</p>
+                        <p class="count-text ">Total Videos</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="counter">
                         <div class="counter_item">
-                            <span><i class="fas fa-user"></i></span>
-                             <h2 class="timer count-number" data-to="11900" data-speed="1500"></h2>
+                            <span><i class="fas fa-user-plus"></i></span>
+                             <h2 class="timer count-number" data-to="{{App\Models\Enrollment::count()}}" data-speed="1500"></h2>
                         </div>
-                        <p class="count-text ">SomeText GoesHere</p>
+                        <p class="count-text ">Enroll</p>
                           
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="counter">
                         <div class="counter_item">
-                            <span><i class="fa fa-bug"></i></span>
-                             <h2 class="timer count-number" data-to="157" data-speed="1500"></h2>
+                            <span><i class="fa fa-users"></i></span>
+                             <h2 class="timer count-number" data-to="{{App\Models\User::count()}}" data-speed="1500"></h2>
                         </div>
-                         <p class="count-text ">SomeText GoesHere</p>
+                         <p class="count-text ">Users</p>
                     </div>
                 </div>
             </div>
@@ -69,131 +69,102 @@
         <section class="table_area">
             <div class="panel">
                 <div class="panel_header">
-                    <div class="panel_title"><span>FooTable with row toggler, sorting, filter and pagination</span></div>
+             @php
+                            
+             $users = App\Models\User::where('created_at', '>=', Carbon\Carbon::now()->subDays(30))->get();
+             
+
+             @endphp
+                    <div class="panel_title"><span>Last month registered users ({{$users->count()}})</span></div>
                 </div>
                 <div class="panel_body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                               <tr>
-                                  <th>ID</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Job Title</th>
-                                  <th>Started On</th>
-                                  <th data-hide="all">Date of Birth</th>
+                                  <th>UserID</th>
+                                  <th>UserName</th>
+                                  <th>Email</th>
+                                  <th>Join</th>
                               </tr>
                           </thead>
                           <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>Dennise</td>
-                                  <td>Fuhrman</td>
-                                  <td>High School History Teacher</td>
-                                  <td>November 8th 2011</td>
-                                  <td>July 25th 1960</td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>Elodia</td>
-                                  <td>Weisz</td>
-                                  <td>Wallpaperer Helper</td>
-                                  <td>October 15th 2010</td>
-                                  <td>March 30th 1982</td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>Raeann</td>
-                                  <td>Haner</td>
-                                  <td>Internal Medicine Nurse Practitioner</td>
-                                  <td>November 28th 2013</td>
-                                  <td>February 26th 1966</td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>Junie</td>
-                                  <td>Landa</td>
-                                  <td>Offbearer</td>
-                                  <td>October 31st 2010</td>
-                                  <td>March 29th 1966</td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>Solomon</td>
-                                  <td>Bittinger</td>
-                                  <td>Roller Skater</td>
-                                  <td>December 29th 2011</td>
-                                  <td>September 22nd 1964</td>
-                              </tr>
-                              <tr>
-                                  <td>6</td>
-                                  <td>Bar</td>
-                                  <td>Lewis</td>
-                                  <td>Clown</td>
-                                  <td>November 12th 2012</td>
-                                  <td>August 4th 1991</td>
-                              </tr>
-                              <tr>
-                                  <td>7</td>
-                                  <td>Usha</td>
-                                  <td>Leak</td>
-                                  <td>Ships Electronic Warfare Officer</td>
-                                  <td>August 14th 2012</td>
-                                  <td>November 20th 1979</td>
-                              </tr>
-                              <tr>
-                                  <td>8</td>
-                                  <td>Lorriane</td>
-                                  <td>Cooke</td>
-                                  <td>Technical Services Librarian</td>
-                                  <td>September 21st 2010</td>
-                                  <td>April 7th 1969</td>
-                              </tr>
-                              <tr>
-                                  <td>9</td>
-                                  <td>Lorriane</td>
-                                  <td>Cooke</td>
-                                  <td>Technical Services Librarian</td>
-                                  <td>September 21st 2010</td>
-                                  <td>April 7th 1969</td>
-                              </tr>
+
+
+
+             @foreach($users as $data)
+
+                  <tr>
+                      <td>{{$data->id}}</td>
+                      <td>{{$data->name}}</td>
+                      <td>{{$data->email}}</td>
+                      <td>{{$data->created_at->format('d M')}}</td>
+
+
+                  </tr>
+
+              @endforeach
+                             
+                             
+                              
                           </tbody>
                         </table>
                     </div>
                 </div>
             </div> <!-- /table -->
-            <!-- chart area -->
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="panel chart_area">
-                        <div class="panel_header">
-                            <div class="panel_title">
-                                <span class="panel_icon"><i class="far fa-chart-bar"></i></span>
-                                <span>bar chat</span>
-                            </div>
-                        </div>
-                        <div class="panel_body">
-                            <div id="bar-chart">
-                                <div id="bar-legend"></div>
-                                <canvas id="bar-canvas" ></canvas>
-                            </div>
-                        </div>
-                    </div> 
+
+
+            <div class="panel">
+                <div class="panel_header">
+             @php
+                            
+             $enroll = App\Models\Enrollment::where('created_at', '>=', Carbon\Carbon::now()->subDays(30))->with('user')->with('course')->get();
+             
+
+             @endphp
+                    <div class="panel_title"><span>Last month Enrolled ({{$enroll->count()}})</span></div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="panel">
-                        <div class="panel_header">
-                            <div class="panel_title">
-                                <span class="panel_icon"><i class="fas fa-chart-pie"></i></span>
-                                <span>pie chat</span>
-                            </div>
-                        </div>
-                        <div class="panel_body">
-                            <div id="piechart"></div>
-                        </div>
-                    </div> 
+                <div class="panel_body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                  <th>CourseID</th>
+                                  <th>Course Title</th>
+                                  <th>UserID</th>
+                                  <th>UserName</th>
+                                  <th>Email</th>
+                                  <th>Enrolled</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+
+
+
+             @foreach($enroll as $data)
+
+                  <tr>
+                      <td>{{$data->course->id}}</td>
+                      <td>{{$data->course->title}}</td>
+                      <td>{{$data->user->id}}</td>
+                      <td>{{$data->user->name}}</td>
+                      <td>{{$data->user->email}}</td>
+                      <td>{{$data->created_at->format('d M')}}</td>
+
+
+                  </tr>
+
+              @endforeach
+                             
+                             
+                              
+                          </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            </div> <!-- /table -->
+          
+           
         </section>                   
     </div><!--/middle content wrapper-->
 </div><!--/ content wrapper -->

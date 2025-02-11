@@ -127,7 +127,7 @@
   <form>
   <div class="form-row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-      <h6 class="text-white mt-0"><i class="fa fa-envelope-o fa-2x mt-3 text-white" aria-hidden="true"></i> Sign Up for Newsletter & Regular Resource</h6>
+     
     </div>
     <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
       <input type="text" class="form-control form-control-lg" placeholder="First name">
@@ -184,7 +184,7 @@
 <!-- end social media -->
                 </div>
                   <div class="col-md-12 text-center">
-                  <p class="text-white mt-2">Copyright © 2024 - NullScripts Bot</p>
+                  <p class="text-white mt-2">Copyright © <?php echo date('Y'); ?> - <a href="https://shikhonhub.com/">shikhonhub.com</a></p>
                 </div>
           </div>
           </div>

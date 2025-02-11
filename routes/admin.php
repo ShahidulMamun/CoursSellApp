@@ -33,9 +33,14 @@ Route::prefix('admin')->group(function (){
 
     Route::post('/videoupdate/{id}', [VideosController::class, 'videoUpdate'])->name('video.update');
 
-
-
     Route::delete('/video/{id}', [VideosController::class, 'destroy'])->name('video.destroy');
+
+    //Enrollment 
+
+    Route::get('/enrollment', [VideosController::class, 'enrollment'])->name('admin.enrollment');
+
+
+
 
 
 
