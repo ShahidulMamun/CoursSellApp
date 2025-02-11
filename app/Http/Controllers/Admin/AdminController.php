@@ -65,8 +65,37 @@ class AdminController extends Controller
          return redirect()->route('login_from')->with('error','Admin Created Successfully');
 
     }
+    
+    //show password form
+    public function showChangePasswordForm()
+    {
+        return view('admin.change-password');
+    }
 
-  // category
+    // Update the password
+     public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:6|confirmed',
+        ]);
+
+        $admin = Auth::guard('admin')->user();
+
+        // Check if the current password matches
+        if (!Hash::check($request->current_password, $admin->password)) {
+            return back()->withErrors(['current_password' => 'Current password is incorrect']);
+        }
+
+        // Update the password
+        $admin->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        return back()->with('success', 'Password updated successfully!');
+    }
+
+    // category
 
     public function addcategory(){
       $allcategory = category::all();
@@ -112,50 +141,10 @@ class AdminController extends Controller
         }
     
 
-    // add scripts
 
-    public function addscripts(){
-        $allcategory = category::all();
-        $subcategory = subcategory::all();
-      return view('admin/add/scripts_all', compact('allcategory', 'subcategory'));
-    }
+    
 
-    // add software
-
-    public function addsoftware(Request $request){
-     $this->validate($request,[
-              'title' => 'required',
-              'product_category' => 'required',
-              'product_subcategory' => 'required',
-              'images' => 'required|mimes:jpeg,png,jpg',
-              'text' => 'required',
-              'rating' => 'required',
-              'preview_images' => 'required|mimes:jpeg,png,jpg',
-              'software_features' => 'required',
-          ]);
-    // add product image
-    $images = $request->file('images');
-    $product = time() . $images->getClientOriginalName();
-    $images->move('upload/productimage', $product);
-// preview image
-    $preview_images = $request->file('preview_images');
-    $preview = time() . $preview_images->getClientOriginalName();
-    $preview_images->move('upload/previewimage', $preview);
-
-      software::create( [
-       'title' => $request->title,
-       'product_category' => $request->product_category,
-       'product_subcategory' => $request->product_subcategory,
-       'images'  =>$product,
-       'text' => $request->text,
-       'rating' => $request->rating,
-       'preview_images'  =>$preview,
-       'software_features' => $request->software_features,
-       //you can put other insertion here
-    ]);
- 
-     return back()->with("add_product" , "Add Product Successfully !");
-    }
+   
 
 }
 

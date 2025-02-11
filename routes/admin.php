@@ -8,6 +8,10 @@ use App\Http\Controllers\Admin\VideosController;
 Route::prefix('admin')->group(function (){
     Route::get('/login',[AdminController::class, 'Index'])->name('login_from');
     Route::post('/login/owner',[AdminController::class, 'Login'])->name('admin.login');
+   Route::get('/password/change',[AdminController::class, 'showChangePasswordForm'])->name('admin.password.form')->middleware('admin');
+   Route::post('/admin/change-password', [AdminController::class, 'updatePassword'])->name('admin.update-password');
+    
+
     Route::get('/dashboard',[AdminController::class, 'Dashboard'])->name('admin.dashboard')->middleware('admin');
     Route::get('/logout',[AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
     Route::get('/register',[AdminController::class, 'AdminRegister'])->name('admin.register')->middleware('admin');
