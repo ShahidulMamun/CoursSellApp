@@ -124,9 +124,8 @@
                                     <a href="#" class="user_link"><img src="panel/assets/images/admin.jpg" alt=""></a>
                                 </div>
                             <ul>
-                                
-                                <li><a href="#"><span><i class="fas fa-user"></i></span> User Profile</a></li>
-                                <li><a href="{{route('admin.password.form')}}"><span><i class="fas fa-cogs"></i></span>  Password Change</a></li>
+                             
+                                <li><a href="{{route('admin.password.form')}}"><span><i class="fas fa-user"></i></span>  Profile & Password </a></li>
                                 <li>
 
                                     <a href=" {{ route('admin.logout') }}"><span><i class="fas fa-unlock-alt"></i></span> Logout</a></li>

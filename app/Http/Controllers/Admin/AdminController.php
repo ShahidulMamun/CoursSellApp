@@ -69,30 +69,39 @@ class AdminController extends Controller
     //show password form
     public function showChangePasswordForm()
     {
-        return view('admin.change-password');
+        $admin = Auth::guard('admin')->user();
+        return view('admin.update-profile-password',compact('admin'));
     }
 
-    // Update the password
-     public function updatePassword(Request $request)
+ 
+
+    public function updateProfile(Request $request)
     {
+        $admin = Auth::guard('admin')->user();
         $request->validate([
-            'current_password' => 'required',
-            'new_password' => 'required|min:6|confirmed',
+            'name' => 'required|string|max:255',
+            // 'email' => 'required|email|unique:admins,email,' . Auth::id(),
+            'email' => 'required|email|unique:admins,email,' . $admin->id,
+            'current_password' => 'nullable|required_with:new_password',
+            'new_password' => 'nullable|min:6|confirmed',
         ]);
 
         $admin = Auth::guard('admin')->user();
 
-        // Check if the current password matches
-        if (!Hash::check($request->current_password, $admin->password)) {
-            return back()->withErrors(['current_password' => 'Current password is incorrect']);
+        // Validate current password if changing password
+        if ($request->filled('current_password')) {
+            if (!Hash::check($request->current_password, $admin->password)) {
+                return back()->withErrors(['current_password' => 'Current password is incorrect']);
+            }
+            $admin->password = Hash::make($request->new_password);
         }
 
-        // Update the password
-        $admin->update([
-            'password' => Hash::make($request->new_password),
-        ]);
+        // Update name and email
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->save();
 
-        return back()->with('success', 'Password updated successfully!');
+        return back()->with('success', 'Profile updated successfully!');
     }
 
     // category
