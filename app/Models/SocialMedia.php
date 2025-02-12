@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class SocialMedia extends Model
 {
     use HasFactory;
-    protected $fillable = ['facebook', 'twitter', 'instagram', 'linkedin'];
+    protected $fillable = ['facebook', 'twitter', 'instagram', 'linkedin', 'whatsapp', 'youtube'];
+
 }

@@ -308,26 +308,7 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/zLyT6wQUuHc?si=VSPvg5RR_lb1eUdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
              </div>
-             <!-- social media  -->
-             <div class="col-xxl-12 text-center mt-5 py-5">
-               <h1 class="display-name text-dark mt-5">Connect Me In</h1>
-               <!-- Whatsapp -->
-<a data-mdb-ripple-init class="btn btn-primary border-0" style="background-color: #25d366;" href="#!" role="button"
-  ><i class="fab fa-whatsapp fa-2x"></i
-></a>
-<!-- Facebook -->
-<a data-mdb-ripple-init class="btn btn-primary border-0" style="background-color: #3b5998;" href="#!" role="button"
-  ><i class="fab fa-facebook-f fa-2x"></i
-></a>
-<!-- Youtube -->
-<a data-mdb-ripple-init class="btn btn-primary border-0" style="background-color: #ed302f;" href="#!" role="button"
-  ><i class="fab fa-youtube fa-2x"></i
-></a>
-<!-- Linkedin -->
-<a data-mdb-ripple-init class="btn btn-primary border-0 rounded" style="background-color: #0082ca;" href="#!" role="button"
-  ><i class="fab fa-linkedin-in fa-2x"></i
-></a>
-             </div>
+  
            </div>
          </div>
       </div>

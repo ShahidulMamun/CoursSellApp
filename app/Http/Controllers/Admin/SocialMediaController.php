@@ -14,27 +14,28 @@ class SocialMediaController extends Controller
         return view('admin.setting.social', compact('social'));
     }
 
-    public function update(Request $request)
+     public function update(Request $request)
     {
-        $request->validate([
-            'facebook' => 'nullable|url',
-            'twitter' => 'nullable|url',
-            'instagram' => 'nullable|url',
-            'linkedin' => 'nullable|url',
-        ]);
+    $request->validate([
+        'facebook' => 'nullable|url',
+        'twitter' => 'nullable|url',
+        'instagram' => 'nullable|url',
+        'linkedin' => 'nullable|url',
+        'whatsapp' => 'nullable|string',
+        'youtube' => 'nullable|url',
+    ]);
 
-        $social = SocialMedia::first();
-        if (!$social) {
-            $social = new SocialMedia();
-        }
+    $social = SocialMedia::firstOrCreate([]);
+    $social->facebook = $request->facebook;
+    $social->twitter = $request->twitter;
+    $social->instagram = $request->instagram;
+    $social->linkedin = $request->linkedin;
+    $social->whatsapp = $request->whatsapp;
+    $social->youtube = $request->youtube;
 
-        $social->facebook = $request->facebook;
-        $social->twitter = $request->twitter;
-        $social->instagram = $request->instagram;
-        $social->linkedin = $request->linkedin;
+    $social->save();
 
-        $social->save();
+    return response()->json(['success' => true, 'message' => 'Social media updated successfully']);
+  }
 
-        return response()->json(['success' => true, 'message' => 'Social media updated successfully']);
-    }
 }

@@ -67,13 +67,13 @@
       <div class="container">
        <div class="row bg-dark">
          <div class="col-12 col-xsm-10 col-sm-6 col-md-5 col-lg-5 col-xl-3 col-xxl-3 mt-2 mt-sm-2 mt-lg-2 mt-lg-2 mt-xl-2 mt-xxl-2 d-none d-sm-block">
-          <a class="text-white text-decoration-none" href="#"><i class="fa fa-youtube-play text-white" aria-hidden="true"></i>  Mastering Digital With Fahim</a>
+          <a class="text-white text-decoration-none" href="#"><i class="fa fa-youtube-play text-white" aria-hidden="true"></i>  {{$settings->site_title}}</a>
          </div>
           <div class="col-12 col-xsm-12 col-sm-6 col-md-7 col-lg-7 col-xl-3 col-xxl-3 mt-2 mt-sm-2 mt-lg-2 mt-lg-2 mt-xl-2 mt-xxl-2 d-none d-sm-block">
-           <p class="text-white"><i class="fa fa-envelope-o" aria-hidden="true"></i>  masteringdigitalfahim@gmail.com</p>
+           <p class="text-white"><i class="fa fa-envelope-o" aria-hidden="true"></i>  {{$settings->email}}</p>
       </div>
        <div class="col-12 col-xsm-12 col-sm-6 col-md-7 col-lg-7 col-xl-3 col-xxl-3 mt-2 mt-sm-2 mt-lg-2 mt-lg-2 mt-xl-2 mt-xxl-2 d-none d-sm-block">
-         <p class="text-white"><i class="fa fa-map-marker fa-1x" aria-hidden="true"></i>  Mohammadpur, Dhaka</p>
+         <p class="text-white"><i class="fa fa-map-marker fa-1x" aria-hidden="true"></i>  {{$settings->address}}</p>
       </div>
        <div class="col-12 col-xsm-12 col-sm-6 col-md-7 col-lg-7 col-xl-3 col-xxl-3 text-right">
           <a class="btn btn-primary text-decoration-none btn-lg shadow border-0" id="login" href="#" role="button">Login</a>
@@ -124,7 +124,7 @@
           <div class="row">
         <!-- Subscribe      -->
       <div class="col-12">
-  <form>
+ <!--  <form>
   <div class="form-row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
      
@@ -139,7 +139,7 @@
     <button type="button" class="btn btn-outline-secondary btn-lg btn-block text-white"> Subscribe</button>
     </div>
   </div>
-</form>
+</form> -->
   </div>
   <!-- end Subscribe -->
                 <div class="col-6 col-xsm-6 col-md-6 col-sm-6">
@@ -164,23 +164,51 @@
                 </div>
                 <!-- social media button -->
                  <div class="col-6 col-md-6 col-xsm-6 mt-4">
-                  <h5 class="text-white mt-4">Connects With Us</h5>
+  <h5 class="text-white mt-4">Connects With Us</h5>
+ 
+
+ @if(isset($social))
       <!-- Whatsapp -->
-<a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #25d366;" href="#!" role="button"
+   @if($social->whatsapp)
+<a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #25d366;" href="https://wa.me/{{ $social->whatsapp }}" role="button"
   ><i class="fab fa-whatsapp fa-2x"></i
 ></a>
+@endif
 <!-- Facebook -->
-<a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #3b5998;" href="#!" role="button"
-  ><i class="fab fa-facebook-f fa-2x"></i
-></a>
+ @if($social->facebook)
+ <a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #3b5998;" href="{{ $social->facebook }}" role="button"
+  ><i class="fab fa-facebook-f fa-2x"></i>
+</a>
+ @endif
 <!-- Youtube -->
-<a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #ed302f;" href="#!" role="button"
+  @if($social->youtube)
+ <a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #ed302f;" href="{{ $social->youtube }}" role="button"
   ><i class="fab fa-youtube fa-2x"></i
 ></a>
+ @endif
 <!-- Linkedin -->
-<a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #0082ca;" href="#!" role="button"
+ @if($social->linkedin)
+ <a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #0082ca;" href="{{ $social->linkedin }}" role="button"
   ><i class="fab fa-linkedin-in fa-2x"></i
 ></a>
+ @endif
+
+  @if($social->instagram)
+
+   <a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #E20185;" href="{{ $social->instagram }}" role="button"
+  ><i class="fab fa-instagram fa-2x"></i>
+  </a>
+  @endif
+
+  @if($social->twitter)
+
+    <a data-mdb-ripple-init class="btn btn-primary border-0 mt-1" style="background-color: #03A4EC;" href="{{ $social->twitter }}" role="button"
+  ><i class="fab fa-linkedin-in fa-2x"></i>
+  </a>
+           
+   @endif
+
+@endif
 <!-- end social media -->
                 </div>
                   <div class="col-md-12 text-center">

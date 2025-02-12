@@ -58,6 +58,18 @@
 				            <input type="url" name="linkedin" id="linkedin" class="form-control" value="{{ $social->linkedin ?? '' }}">
 				        </div>
 
+
+                    <div class="form-group">
+                        <label>YouTube URL</label>
+                        <input type="url" name="youtube" id="youtube" class="form-control" value="{{ $social->youtube ?? '' }}">
+                    </div>
+
+                     <div class="form-group">
+                        <label>WhatsApp Number</label>
+                        <input type="text" name="whatsapp" id="whatsapp" class="form-control" value="{{ $social->whatsapp ?? '' }}">
+                    </div>
+
+
 				        <button type="submit" class="btn btn-success" style="float: right;">Update Social Media</button>
 				    </form>
 				    <div id="social-success" class="mt-2 text-success" style="display: none;"></div>
