@@ -2,6 +2,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\VideosController;
+use App\Http\Controllers\Admin\SettingController;
 
 /*===================Admin Route===========================*/
 
@@ -11,7 +12,11 @@ Route::prefix('admin')->group(function (){
     // password change
    Route::get('/profile-and/or/password/',[AdminController::class, 'showChangePasswordForm'])->name('admin.password.form')->middleware('admin');
    //profile update
-    Route::post('/profile/update', [AdminController::class, 'updateProfile'])->name('admin.update-profile');
+   Route::post('/profile/update', [AdminController::class, 'updateProfile'])->name('admin.update-profile');
+   
+   //setting
+   Route::get('/settings', [SettingController::class, 'index'])->name('setting');
+   Route::post('/settings/update', [SettingController::class, 'update'])->name('settings.update');
 
 
     

@@ -47,7 +47,7 @@
  -->
 
                         <li class="single-nav-wrapper">
-                          <a class="menu-item" href="{{ route('admin.register')}}" aria-expanded="false">
+                          <a class="menu-item" href="{{ route('setting')}}" aria-expanded="false">
                             <span class="left-icon"><i class="fa fa-cog"></i></span>
                               <span class="menu-text">Setting</span>
                           </a>
