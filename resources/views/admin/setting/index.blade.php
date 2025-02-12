@@ -21,24 +21,20 @@
                 </button>
               </div>
                 @endif
-        <!-- counter_area -->
-        <section class="counter_area">
-           
-        </section>
-        <!--/ counter_area -->
+       
         <!-- table area -->
         <section class="table_area">
             
 
 
-            <div class="panel">
-                <div class="panel_header">
-           
-                </div>
-                <div class="panel_body">
+    <div class="panel">
+        <div class="panel_header">
+          <h5 class="text-white">Site Settings Update</h5>
+        </div>
+     <div class="panel_body">
                    
 	 <div class="container">
-		    <h4 class="text-dark">Site Settings</h4>
+		   
 		    <form id="settingsForm" enctype="multipart/form-data">
 		        @csrf
 		        <div class="form-group">

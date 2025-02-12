@@ -3,6 +3,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\VideosController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SocialMediaController;
 
 /*===================Admin Route===========================*/
 
@@ -17,6 +18,10 @@ Route::prefix('admin')->group(function (){
    //setting
    Route::get('/settings', [SettingController::class, 'index'])->name('setting');
    Route::post('/settings/update', [SettingController::class, 'update'])->name('settings.update');
+   //social media 
+
+   Route::get('/admin/social-media', [SocialMediaController::class, 'index'])->name('social');
+   Route::post('/admin/social-media/update', [SocialMediaController::class, 'update'])->name('social.update');
 
 
     

@@ -33,12 +33,12 @@
 
             <div class="panel">
                 <div class="panel_header">
-           
+                    <h5 class="text-white">Edit Profile</h5>
                 </div>
                 <div class="panel_body">
                    
 				<div class="container">
-				    <h2>Edit Profile</h2>
+		
 
 				    @if (session('success'))
 				        <div class="alert alert-success">{{ session('success') }}</div>

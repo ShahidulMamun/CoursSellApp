@@ -42,4 +42,7 @@ class SettingController extends Controller
 
         return response()->json(['success' => true, 'message' => 'Settings updated successfully']);
     }
+
+
+    
 }

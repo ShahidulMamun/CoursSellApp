@@ -51,7 +51,15 @@
                             <span class="left-icon"><i class="fa fa-cog"></i></span>
                               <span class="menu-text">Setting</span>
                           </a>
-                      </li>
+                        </li>
+
+
+                        <li class="single-nav-wrapper">
+                          <a class="menu-item" href="{{ route('social')}}" aria-expanded="false">
+                            <span class="left-icon"><i class="fa fa-icons"></i></span>
+                              <span class="menu-text">Social</span>
+                          </a>
+                        </li>
 
 
                    
