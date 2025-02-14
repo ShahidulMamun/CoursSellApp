@@ -9,6 +9,7 @@ use App\Models\Admin;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
+use App\Models\Notification;
 
 
 
@@ -30,18 +31,29 @@ class AdminController extends Controller
     public function transaction(){
 
      // optional code for create transaction
-    Transaction::create([
-    'user_id' => 1, 
-    'transaction_id' => strtoupper(uniqid()),
-    'amount' => 100.50,
-    'details' => 'Course purchase',
-    'trnx_type' => 'success',
-    'trnx_method' => 'stripe'
-    ]);
+    // Transaction::create([
+    // 'user_id' => 1, 
+    // 'transaction_id' => strtoupper(uniqid()),
+    // 'amount' => 100.50,
+    // 'details' => 'Course purchase',
+    // 'trnx_type' => 'success',
+    // 'trnx_method' => 'stripe'
+    // ]);
       // optional code for create transaction
+
 
       $transactions = Transaction::with('user')->get();
       return view('admin.transaction.index',compact('transactions'));
+    }
+
+
+    public function notifications()
+   {
+    $notifications = Notification::where('admin_id', auth()->guard('admin')->id())
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return view('admin.notification', compact('notifications'));
     }
 
     public function Login( Request $request){

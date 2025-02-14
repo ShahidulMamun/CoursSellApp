@@ -27,6 +27,9 @@ Route::prefix('admin')->group(function (){
    //transaction 
    Route::get('/transaction-history', [AdminController::class, 'transaction'])->name('transaction');
 
+   //notification
+    Route::get('/all-notification', [AdminController::class, 'notifications'])->name('notification');
+
 
     
 
