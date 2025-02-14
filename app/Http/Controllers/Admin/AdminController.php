@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Admin;
-use App\Models\category;   
-use App\Models\subcategory; 
-use App\Models\software; 
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 
@@ -27,6 +25,23 @@ class AdminController extends Controller
     public function Dashboard(){
       
         return view('admin.index');
+    }
+
+    public function transaction(){
+
+     // optional code for create transaction
+    Transaction::create([
+    'user_id' => 1, 
+    'transaction_id' => strtoupper(uniqid()),
+    'amount' => 100.50,
+    'details' => 'Course purchase',
+    'trnx_type' => 'success',
+    'trnx_method' => 'stripe'
+    ]);
+      // optional code for create transaction
+
+      $transactions = Transaction::with('user')->get();
+      return view('admin.transaction.index',compact('transactions'));
     }
 
     public function Login( Request $request){

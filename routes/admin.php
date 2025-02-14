@@ -24,6 +24,10 @@ Route::prefix('admin')->group(function (){
    Route::post('/admin/social-media/update', [SocialMediaController::class, 'update'])->name('social.update');
 
 
+   //transaction 
+   Route::get('/transaction-history', [AdminController::class, 'transaction'])->name('transaction');
+
+
     
 
     Route::get('/dashboard',[AdminController::class, 'Dashboard'])->name('admin.dashboard')->middleware('admin');

@@ -31,6 +31,15 @@
                       </li>
 
 
+                         <li class="single-nav-wrapper">
+                          <a class="menu-item" href="{{route('transaction')}}" aria-expanded="false">
+                            <span class="left-icon"><i class="fab fa-exchange"></i></span>
+                              <span class="menu-text">Transaction</span>
+                          </a>
+                      </li>
+
+
+
                     <!--   <li class="single-nav-wrapper">
                           <a class="menu-item" href="{{ asset('admin/category/add')}}" aria-expanded="false">
                             <span class="left-icon"><i class="far fa-edit"></i></span>
