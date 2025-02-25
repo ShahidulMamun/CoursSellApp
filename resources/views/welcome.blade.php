@@ -68,63 +68,26 @@
     <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
            <div class="row">
+           
+        <!--    course item -->
+         @foreach($courses as $data)
           <div class="col-12 col-xsm-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 py-2 text-center">
         <div class="card border-0 bg-light shadow couress">
                   <div class="card-body image p-0">
-                    <a href="{{ asset('/courses')}}">
-                      <img src="{{asset('img/martkart_image.png')}}" class="fit-image rounded img-fluid couress" alt="">
+                    <a href="{{ route('course-detail',$data->slug)}}">
+                      <img src="{{ asset('storage/' . $data->thumbnail) }}" class="fit-image rounded img-fluid couress" alt="">
                     </a>
                   </div>
                 </div>
                 <a href="">
-                <h3 class="text-dark font-weight-bold mt-3">Facebook 2025 + Server Side Tracking (Recorded + Live)</h3>
+                <h3 class="text-dark font-weight-bold mt-3">{{$data->title}}</h3>
               </a>
-              <a class="btn btn-primary btn-lg mt-2 image shadow" href="{{ asset('/courses')}}" role="button">Enroll Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+              <a class="btn btn-primary btn-lg mt-2 image shadow" href="{{ route('course-detail',$data->slug)}}" role="button">Enroll Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
              </div>
-             
-         <!-- second part -->
-           <div class="col-12 col-xsm-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 py-2 text-center">
-        <div class="card border-0 bg-light shadow couress">
-                  <div class="card-body image p-0">
-                    <a href="{{ asset('/courses')}}">
-                      <img src="{{asset('img/martkart_image.png')}}" class="fit-image rounded img-fluid couress" alt="">
-                    </a>
-                  </div>
-                </div>
-                <a href="">
-                <h3 class="text-dark font-weight-bold mt-3">Facebook 2025 + Server Side Tracking (Recorded + Live)</h3>
-              </a>
-              <a class="btn btn-primary btn-lg mt-2 image shadow" href="{{ asset('/courses')}}" role="button">Enroll Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-             </div>
+          @endforeach
+         <!--  course item end -->
 
-             <!-- third  -->
-            <div class="col-12 col-xsm-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 py-2 text-center">
-        <div class="card border-0 bg-light shadow couress">
-                  <div class="card-body image p-0">
-                    <a href="{{ asset('/courses')}}">
-                      <img src="{{asset('img/martkart_image.png')}}" class="fit-image rounded img-fluid couress" alt="">
-                    </a>
-                  </div>
-                </div>
-                <a href="">
-                <h3 class="text-dark font-weight-bold mt-3">Facebook 2025 + Server Side Tracking (Recorded + Live)</h3>
-              </a>
-              <a class="btn btn-primary btn-lg mt-2 image shadow" href="{{ asset('/courses')}}" role="button">Enroll Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-             </div>
-             <!-- forth -->
-                <div class="col-12 col-xsm-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 py-2 text-center">
-        <div class="card border-0 bg-light shadow couress">
-                  <div class="card-body image p-0">
-                    <a href="{{ asset('/courses')}}">
-                      <img src="{{asset('img/martkart_image.png')}}" class="fit-image rounded img-fluid couress" alt="">
-                    </a>
-                  </div>
-                </div>
-                <a href="">
-                <h3 class="text-dark font-weight-bold mt-3">Facebook 2025 + Server Side Tracking (Recorded + Live)</h3>
-              </a>
-              <a class="btn btn-primary btn-lg mt-2 image shadow" href="{{ asset('/courses')}}" role="button">Enroll Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-             </div>
+               
            </div>
          </div>
           <!-- end all course -->

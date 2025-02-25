@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 class Course extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','thumbnail','slug','description', 'price', 'status'];
+    protected $fillable = ['title','thumbnail','slug','description', 'total_enroll', 'discount_price', 'regular_price', 'total_video', 'status','course_trial_video','tags'];
 
 
 }

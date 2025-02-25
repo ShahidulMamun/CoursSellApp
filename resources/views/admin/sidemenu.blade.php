@@ -8,6 +8,14 @@
                         </a>
                       </li>
 
+                       <li class="single-nav-wrapper">
+                          <a class="menu-item" href="{{route('users')}}" aria-expanded="false">
+                            <span class="left-icon"><i class="fa fa-users"></i></span>
+                              <span class="menu-text">Users</span>
+                          </a>
+                      </li>
+
+
                       <li class="single-nav-wrapper">
                           <a class="menu-item" href="{{route('admin.courses')}}" aria-expanded="false">
                             <span class="left-icon"><i class="fa fa-graduation-cap"></i></span>

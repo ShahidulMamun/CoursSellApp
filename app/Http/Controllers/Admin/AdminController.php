@@ -10,6 +10,7 @@ use App\Models\Transaction;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use App\Models\Notification;
+use App\Models\User;
 
 
 
@@ -22,23 +23,27 @@ class AdminController extends Controller
         return view('admin.admin_login');
     }
 
-
     public function Dashboard(){
       
         return view('admin.index');
     }
 
+    public function users(){
+      $users = User::paginate(10);
+      return view('admin.users.index',compact('users'));
+    }
+
     public function transaction(){
 
      // optional code for create transaction
-    // Transaction::create([
-    // 'user_id' => 1, 
-    // 'transaction_id' => strtoupper(uniqid()),
-    // 'amount' => 100.50,
-    // 'details' => 'Course purchase',
-    // 'trnx_type' => 'success',
-    // 'trnx_method' => 'stripe'
-    // ]);
+    Transaction::create([
+    'user_id' => 2, 
+    'transaction_id' => strtoupper(uniqid()),
+    'amount' => 100.50,
+    'details' => 'Course purchase',
+    'trnx_type' => 'success',
+    'trnx_method' => 'stripe'
+    ]);
       // optional code for create transaction
 
 

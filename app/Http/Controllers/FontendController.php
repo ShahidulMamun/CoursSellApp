@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\software; 
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class FontendController extends Controller
 {
@@ -25,8 +25,21 @@ public function CoursesRecorded(){
 }
 
 // Courses
-public function Courses(){
-	return view('/courses');
+public function coursesDetails($slug){
+     $course = Course::where('slug', $slug)->firstOrFail();
+
+	return view('courses.details',compact('course'));
+}
+
+
+
+ // StudentRegistration
+public function StudentRegistration(){
+	return view('/student-registration');
+}
+ // user dachboard
+public function UserDashboard(){
+	return view('/user-dashboard');
 }
 
 }

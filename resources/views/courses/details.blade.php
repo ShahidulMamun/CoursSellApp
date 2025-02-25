@@ -31,7 +31,7 @@
 	</div>
 	<!-- star end -->
 	<!-- top title -->
-		<h1 class="text-dark courses-preview-title mt-2">Advanced Facebook Ads 2025 + Server Side Tracking with Live Support Class</h1>
+		<h1 class="text-dark courses-preview-title mt-2">{{$course->title}}</h1>
 		<!-- end top title -->
 		<span>Categories:</span> <span><a href="Digital Marketing">Digital Marketing</a></span>
 		</div>
@@ -212,7 +212,7 @@
 		<div class="col-12 col-sm-12 col-xsm-12 col-md-12 col-lg-4 col-xl-4 cl-xxl-4">
 			<div class="card">
                <div class="card-header py-5">
-               <span class="text-dark display-6 font-weight-bold">2800.00 <small class="">&#2547;</small></span><span class="ml-3 font-weight-bold"><del>2400.00 &#2547;</del></span>
+               <span class="text-dark display-6 font-weight-bold">{{$course->price}} <small class="">&#2547;</small></span><span class="ml-3 font-weight-bold"><del>2400.00 &#2547;</del></span>
                <br>
                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">Add to Cart</a>
                </div>

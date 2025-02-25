@@ -61,18 +61,34 @@
           </div>
 
            <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Price:</label>
+            <label for="recipient-name" class="col-form-label">Regular Price:</label>
             <input type="text" class="form-control" id="recipient-name" name="price">
           </div>
+
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Discount Price:</label>
+            <input type="text" class="form-control" id="recipient-name" name="discount_price">
+          </div>
+
 
           <div class="form-group">
             <label for="message-text" class="col-form-label">Description:</label>
             <textarea class="form-control" id="summary-ckeditor" name="description"></textarea>
           </div>
 
+          <div class="form-group">
+              <label>Trial Video URL</label>
+              <input type="text" name="course_trial_video" class="form-control" placeholder="Enter trial video URL">
+          </div>
+
            <div class="form-group">
             <label for="message-text" class="col-form-label">Thumnail:</label>
              <input type="file" class="form-control" id="recipient-name" name="thumbnail">
+          </div>
+
+          <div class="form-group">
+              <label>Tags (comma-separated)</label>
+              <input type="text" name="tags" class="form-control" placeholder="Enter tags, e.g., Laravel, PHP, Web Development">
           </div>
 
            <div class="form-group">
@@ -83,6 +99,7 @@
                 <option value="1" selected>Active</option>
             </select>
           </div>
+
              <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Add Course</button>
         </div>
@@ -124,10 +141,29 @@
                     <small class="text-danger error-message" id="description_error"></small>
                 </div>
 
+                 <div class="form-group">
+                    <label>Trial Video:</label>
+                    <input type="text" class="form-control" name="course_trial_video" id="course_trial_video">
+                    <small class="text-danger error-message" id="course_trial_video_error"></small>
+                </div>
+
+
                 <div class="form-group">
-                    <label>Price:</label>
-                    <input type="number" class="form-control" name="price" id="price">
-                    <small class="text-danger error-message" id="price_error"></small>
+                    <label>Regula Price:</label>
+                    <input type="number" class="form-control" name="regular_price" id="regular_price">
+                    <small class="text-danger error-message" id="regular_price_error"></small>
+                </div>
+
+                 <div class="form-group">
+                    <label>Discount Price:</label>
+                    <input type="number" class="form-control" name="discount_price" id="discount_price">
+                    <small class="text-danger error-message" id="discount_price_error"></small>
+                </div>
+
+                  <div class="form-group">
+                    <label>Tags:</label>
+                    <input type="text" class="form-control" name="tags" id="tags">
+                    <small class="text-danger error-message" id="tags_error"></small>
                 </div>
                 
               <div class="form-group">
@@ -139,6 +175,10 @@
                     <input type="file" class="form-control-file" name="thumbnail" id="thumbnail">
                     <small class="text-danger error-message" id="thumbnail_error"></small>
                 </div>
+
+               
+
+
 
                <div class="form-group">
                         <label>Status:</label>
@@ -263,7 +303,10 @@
                 $("#course_id").val(course.id);
                 $("#title").val(course.title);
                 $("#description").val(course.description);
-                $("#price").val(course.price);
+                $("#course_trial_video").val(course.course_trial_video);
+                $("#regular_price").val(course.regular_price);
+                $("#discount_price").val(course.discount_price);
+                $("#tags").val(course.tags);
                 $("#status").val(course.status);
 
 
@@ -287,7 +330,7 @@
     });
 
     // Submit form with AJAX
-    $("#editCourseForm").submit(function (e) {
+   $("#editCourseForm").submit(function (e) {
     e.preventDefault();
     
     let formData = new FormData(this);
@@ -310,19 +353,12 @@
             }
         },
         error: function (xhr) {
-            $(".error-message").html(""); // Clear old errors
-
-            if (xhr.status === 422) {
-                let errors = xhr.responseJSON.errors;
-                $.each(errors, function (key, value) {
-                    $("#" + key + "_error").html(value[0]); // Show error under field
-                });
-            } else {
-                alert("Something went wrong!");
-            }
+            console.log(xhr.responseText); // Show actual error in the console
+            alert("Something went wrong! Check console.");
         }
     });
 });
+
 });
 
     </script>

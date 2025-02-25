@@ -27,12 +27,12 @@
 				<div class="card-body">
 					<div class="row">
 					<div class="col-12 col-sm-6 col-xsm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-2">
-					<p class="text-muted">Transactions</p>
+					<p class="text-muted">Users</p>
 						</div>
 						<div class="col-12 col-sm-6 col-xsm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end mt-2">
 						<a class="text-dark" href="{{ asset('admin/dashboard')}}">Dashboard / </a>
 							<a class="text-dark" href="#">Admin / </a>
-							<a class="text-dark" href="{{Route('transaction')}}">Transaction</a>
+							<a class="text-dark" href="{{Route('transaction')}}">Users</a>
 						</div>
 					</div>
 				</div>
@@ -56,30 +56,25 @@
   <thead>
     <tr class="text-muted">
       <th>#</th>
-      <th>TrnxID</th>
-      <th>User</th>
-      <th>Amount</th>
-      <th>Details</th>
-      <th>Method</th>
-      <th>Date&Time</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Join</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
-  	@foreach($transactions as $transaction)
-    <tr id="course-{{ $transaction->id }}">
+  	@foreach($users as $user)
+    <tr id="course-{{ $user->id }}">
       <td>{{ $loop->index +1}}</td>
-      <td>{{ $transaction->transaction_id }}</td>
-    
-        <td>{{ $transaction->user->name }}</td>
-        <td class="text-success">{{ $transaction->amount }} TK</td>
-        <td ><p>{{ $transaction->details }}</p></td>
-        <td>{{ $transaction->trnx_method }}</td>
-        <td>{{ $transaction->created_at->format('d,M Y') }}</td>
-      
+        <td>{{ $user->name }}</td>
+        <td class="text-success">{{ $user->email }}</td>
+        <td ><p>{{ $user->created_at->format('d M , Y') }}</p></td>
+  
       <td>
      
-         <button class="deleteCourse btn btn-sm btn-danger" data-id="{{ $transaction->id }}">Delete</button>
+         <button class="deleteCourse btn btn-sm btn-danger" data-id="{{ $user->id }}">Delete</button>
+
+          <button class="deleteCourse btn btn-sm btn-danger" data-id="{{ $user->id }}">Block</button>
       </td>
     </tr>
     @endforeach

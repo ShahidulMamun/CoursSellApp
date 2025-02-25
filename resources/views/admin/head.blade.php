@@ -7,6 +7,7 @@
                 </div>
                 <div class="sidebar_btn">
                     <button class="sidbar-toggler-btn"><i class="fas fa-bars"></i></button>
+                    <a  target="_blank" class="text-white" href="{{url('/')}}">Live</a>
                 </div>
                 <ul class="header_menu">
                     <li><a href="#" class="search_btn" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a>
@@ -38,16 +39,20 @@
                                 <p>You have {{count($notifications)}} notifications</p>
                             </div>
                             <ul class="dropdown_body scrollbar nice_scroll">
+                               @foreach($notifications as $notice)
                                 <li>
                                     <a href="#">
                                         <div class="img-part">
-                                            <span class="text-success"><i class="fas fa-users"></i></span>
+                                            <span class="text-success">
+                                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                            </span>
                                         </div>
                                         <div class="text-part">
-                                            <p>5 new members joined</p>
+                                            <p>{{$notice->message}}</p>
                                         </div>
                                     </a>
                                 </li>
+                                @endforeach
                              
                             </ul>
                             <div class="dropdown_footer">

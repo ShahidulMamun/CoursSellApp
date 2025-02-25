@@ -67,16 +67,16 @@
       <div class="container">
        <div class="row bg-dark">
          <div class="col-12 col-xsm-10 col-sm-6 col-md-5 col-lg-5 col-xl-3 col-xxl-3 mt-2 mt-sm-2 mt-lg-2 mt-lg-2 mt-xl-2 mt-xxl-2 d-none d-sm-block">
-          <a class="text-white text-decoration-none" href="#"><i class="fa fa-youtube-play text-white" aria-hidden="true"></i>  {{$settings->site_title}}</a>
+          <a class="text-white text-decoration-none" href="#"><i class="fa fa-youtube-play text-white" aria-hidden="true"></i>  {{$settings->site_title ?? "ShikhonHub"}}</a>
          </div>
           <div class="col-12 col-xsm-12 col-sm-6 col-md-7 col-lg-7 col-xl-3 col-xxl-3 mt-2 mt-sm-2 mt-lg-2 mt-lg-2 mt-xl-2 mt-xxl-2 d-none d-sm-block">
-           <p class="text-white"><i class="fa fa-envelope-o" aria-hidden="true"></i>  {{$settings->email}}</p>
+           <p class="text-white"><i class="fa fa-envelope-o" aria-hidden="true"></i>  {{$settings->email ?? "Not set"}}</p>
       </div>
        <div class="col-12 col-xsm-12 col-sm-6 col-md-7 col-lg-7 col-xl-3 col-xxl-3 mt-2 mt-sm-2 mt-lg-2 mt-lg-2 mt-xl-2 mt-xxl-2 d-none d-sm-block">
-         <p class="text-white"><i class="fa fa-map-marker fa-1x" aria-hidden="true"></i>  {{$settings->address}}</p>
+         <p class="text-white"><i class="fa fa-map-marker fa-1x" aria-hidden="true"></i>  {{$settings->address ?? "Not Set"}}</p>
       </div>
        <div class="col-12 col-xsm-12 col-sm-6 col-md-7 col-lg-7 col-xl-3 col-xxl-3 text-right">
-          <a class="btn btn-primary text-decoration-none btn-lg shadow border-0" id="login" href="#" role="button">Login</a>
+          <a class="btn btn-primary text-decoration-none btn-lg shadow border-0" id="login" href="{{route('login')}}" role="button">Login</a>
       </div>
        </div>
        </div>
@@ -105,7 +105,7 @@
                                 <a class="nav-link" href="{{ asset('/courses-recorded')}}">Recorded Courses</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link" href="">Dashboard</a> 
+                                <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a> 
                                 </li>
                             </ul>
                         </div>

@@ -8,6 +8,10 @@ use App\Http\Controllers\Admin\SocialMediaController;
 /*===================Admin Route===========================*/
 
 Route::prefix('admin')->group(function (){
+
+	Route::get('/register',[AdminController::class, 'AdminRegister'])->name('admin.register');
+    Route::post('/register/create',[AdminController::class, 'AdminRegisterCreate'])->name('admin.register.create');
+
     Route::get('/login',[AdminController::class, 'Index'])->name('login_from');
     Route::post('/login/owner',[AdminController::class, 'Login'])->name('admin.login');
     // password change
@@ -30,13 +34,16 @@ Route::prefix('admin')->group(function (){
    //notification
     Route::get('/all-notification', [AdminController::class, 'notifications'])->name('notification');
 
+    //users 
+
+    Route::get('registered-users',[AdminController::class,'users'])->name('users');
+
 
     
 
     Route::get('/dashboard',[AdminController::class, 'Dashboard'])->name('admin.dashboard')->middleware('admin');
     Route::get('/logout',[AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
-    Route::get('/register',[AdminController::class, 'AdminRegister'])->name('admin.register')->middleware('admin');
-    Route::post('/register/create',[AdminController::class, 'AdminRegisterCreate'])->name('admin.register.create')->middleware('admin');
+  
     Route::get('/category/add',[AdminController::class, 'addcategory'])->name('admin.category.add');
     Route::post('/category/add',[AdminController::class, 'categoryadd'])->name('admin.category.add');
      Route::get('/category/sub/category',[AdminController::class, 'subcategory'])->name('admin.category.sub.category');
